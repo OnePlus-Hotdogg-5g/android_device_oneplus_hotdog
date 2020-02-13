@@ -12,14 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_props.mk
 
-# Overlays
-#DEVICE_PACKAGE_OVERLAYS += \
-#    $(LOCAL_PATH)/overlay \
-#    $(LOCAL_PATH)/overlay-lineage
-
-#PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-#    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
-
 # A/B
 AB_OTA_PARTITIONS += \
     odm \
@@ -27,17 +19,12 @@ AB_OTA_PARTITIONS += \
     recovery \
     vbmeta_system
 
-# Device init scripts
-#PRODUCT_PACKAGES += \
-#    fstab.qcom \
-#    init.display.hotdog.rc
-
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/recovery/root/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_SHIPPING_API_LEVEL := 29
