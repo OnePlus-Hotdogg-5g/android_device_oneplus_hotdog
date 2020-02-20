@@ -5,4 +5,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_hotdog.mk
+    $(LOCAL_DIR)/lineage_hotdogg.mk
+
+
+
+COMMON_LUNCH_CHOICES := \
+    lineage_hotdogg-userdebug \
+    lineage_hotdogg-eng
